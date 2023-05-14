@@ -15,7 +15,7 @@ def generate_upload_id():
 
 def getUserModel():
     if settings.CUSTOM_USER_MODEL:
-        return settings.CUSTOM_USER_MODEL
+        return settings.CHUNKED_CUSTOM_USER_MODEL
     else:
         return settings.AUTH_USER_MODEL
 

@@ -130,7 +130,7 @@ Add any of these variables into your project settings to override them.
 * Max amount of data (in bytes) that can be uploaded. ``None`` means no limit.
 * Default: ``None``
 
-``CUSTOM_USER_MODEL``
+``CHUNKED_CUSTOM_USER_MODEL``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Use a custom user model instead of Django default (Auth User).
