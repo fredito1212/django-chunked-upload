@@ -13,6 +13,12 @@ from .constants import CHUNKED_UPLOAD_CHOICES, UPLOADING
 def generate_upload_id():
     return uuid.uuid4().hex
 
+def getUserModel():
+    if settings.CUSTOM_USER_MODEL:
+        return settings.CUSTOM_USER_MODEL
+    else:
+        return settings.AUTH_USER_MODEL
+
 
 class AbstractChunkedUpload(models.Model):
     """
@@ -91,7 +97,7 @@ class ChunkedUpload(AbstractChunkedUpload):
     Default chunked upload model.
     """
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
+        getUserModel(),
         on_delete=models.CASCADE,
         related_name='chunked_uploads',
         null=DEFAULT_MODEL_USER_FIELD_NULL,
